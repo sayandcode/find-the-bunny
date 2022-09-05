@@ -44,7 +44,14 @@ function Board() {
   }
 
   return (
-    <Stack direction="row" spacing={2}>
+    <Stack
+      direction="row"
+      spacing={2}
+      sx={{
+        width: '50vw',
+        margin: 'auto',
+      }}
+    >
       {Array.from(Array(noOfHoles)).map((_, i) => (
         <Hole
           // eslint-disable-next-line react/no-array-index-key

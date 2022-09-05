@@ -1,13 +1,16 @@
 import { Pets as PawIcon } from '@mui/icons-material';
 import PropTypes from 'prop-types';
 import { Box, Stack } from '@mui/material';
+import { useContext } from 'react';
+import { ConfigContext } from '../../utils/Contexts/gameConfig';
 
 function Hole({ hasBunny, open, onClick: handleClick }) {
+  const { noOfHoles } = useContext(ConfigContext);
   return (
     <Box
       sx={{
-        height: 100,
-        width: 100,
+        height: `calc(50vw / ${noOfHoles})`,
+        width: `calc(50vw / ${noOfHoles})`,
       }}
       onClick={handleClick}
     >

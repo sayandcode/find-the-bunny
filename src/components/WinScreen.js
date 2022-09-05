@@ -29,10 +29,25 @@ function WinScreen() {
   return (
     show && (
       <Backdrop open sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <Typography variant="h3" color="white">
+        <Typography
+          variant="h3"
+          fontFamily="Pacifico, cursive"
+          fontSize="4rem"
+          gutterBottom
+          color="secondary"
+        >
           You won!
         </Typography>
-        <Button variant="contained" size="large" onClick={resetGame}>
+        <Button
+          variant="contained"
+          size="large"
+          onClick={resetGame}
+          color="secondary"
+          sx={{
+            fontWeight: (theme) => theme.typography.fontWeightBold,
+            borderRadius: (theme) => theme.shape.borderRadius,
+          }}
+        >
           Play again
         </Button>
       </Backdrop>

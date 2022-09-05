@@ -1,14 +1,17 @@
+import Background from './components/Background';
 import Board from './components/BoardComponents/Board';
 import WinScreen from './components/WinScreen';
-import ConfigContextProvider from './utils/Contexts/gameConfig';
+import ContextProviders from './utils/Contexts/ContextProviders';
 
 function App() {
   return (
     <div>
-      <ConfigContextProvider>
-        <WinScreen />
-        <Board />
-      </ConfigContextProvider>
+      <ContextProviders>
+        <Background>
+          <Board />
+          <WinScreen />
+        </Background>
+      </ContextProviders>
     </div>
   );
 }
