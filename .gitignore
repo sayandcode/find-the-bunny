@@ -11,6 +11,9 @@
 # production
 /build
 
+# development
+doForNextCommit.md
+
 # misc
 .DS_Store
 .env.local

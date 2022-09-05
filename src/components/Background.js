@@ -24,6 +24,7 @@ function Background({ children }) {
       >
         find the bunny
       </Typography>
+      <GameSettings />
       {children}
     </Box>
   );

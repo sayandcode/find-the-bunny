@@ -23,9 +23,10 @@ function Board() {
     unsubscribe('reset', resetBoard);
   }
 
-  function resetBoard() {
+  function resetBoard(event) {
+    const { newNoOfHoles } = event.detail;
     setOpenHole(null);
-    setBunnyPos(getRandomNumberUnder(noOfHoles));
+    setBunnyPos(getRandomNumberUnder(newNoOfHoles));
   }
 
   function checkHole(holeNo) {

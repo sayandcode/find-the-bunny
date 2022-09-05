@@ -1,26 +1,32 @@
 import { Backdrop, Button, Typography } from '@mui/material';
-import { useEffect, useState } from 'react';
-import useListeners, { publishEvent } from '../utils/events';
+import { useContext, useState } from 'react';
+import { ConfigContext } from '../utils/Contexts/gameConfig';
+import useListeners, {
+  publishEvent,
+  subscribe,
+  unsubscribe,
+} from '../utils/events';
 
 function WinScreen() {
   const [show, setShow] = useState(false);
+  const { noOfHoles } = useContext(ConfigContext);
 
   useListeners(startListening, stopListening);
 
   /* EVENT HANDLERS */
   const resetGame = () => {
-    publishEvent('reset');
+    publishEvent('reset', { newNoOfHoles: noOfHoles });
   };
 
   /* FUNCTION DEFINITIONS */
   function startListening() {
-    document.addEventListener('win', showWinScreen);
-    document.addEventListener('reset', hideWinScreen);
+    subscribe('win', showWinScreen);
+    subscribe('reset', hideWinScreen);
   }
 
   function stopListening() {
-    document.removeEventListener('win', showWinScreen);
-    document.removeEventListener('reset', hideWinScreen);
+    unsubscribe('win', showWinScreen);
+    unsubscribe('reset', hideWinScreen);
   }
 
   const showWinScreen = () => setShow(true);

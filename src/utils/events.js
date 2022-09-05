@@ -8,8 +8,8 @@ function unsubscribe(eventName, eventHandlerFn) {
   document.removeEventListener(eventName, eventHandlerFn);
 }
 
-function publishEvent(eventName) {
-  const event = new Event(eventName);
+function publishEvent(eventName, payload) {
+  const event = new CustomEvent(eventName, { detail: payload });
   document.dispatchEvent(event);
 }
 
