@@ -10,6 +10,7 @@ const Hole = forwardRef(({ size, selected, onClick: handleClick }, ref) => {
       sx={{
         // hole styles
         '.hole': {
+          cursor: 'pointer',
           height: size,
           width: size,
           '.lid': {

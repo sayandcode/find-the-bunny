@@ -56,6 +56,8 @@ function WinScreen() {
         >
           Play again
         </Button>
+        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+        <audio src="music/WinCheer.mp3" autoPlay />
       </Backdrop>
     )
   );

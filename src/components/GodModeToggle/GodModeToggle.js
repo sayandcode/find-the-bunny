@@ -17,14 +17,12 @@ function GodModeToggle() {
         position: 'fixed',
         bottom: '1vh',
         left: '3vw',
+        cursor: 'pointer',
       }}
+      onClick={() => setGodMode((old) => !old)}
     >
       <GodStyledText size={TOGGLE_SIZE}>DEV</GodStyledText>
-      <GodStyledSwitch
-        size={TOGGLE_SIZE}
-        on={godMode}
-        onClick={() => setGodMode((old) => !old)}
-      />
+      <GodStyledSwitch size={TOGGLE_SIZE} on={godMode} />
       <GodStyledText size={TOGGLE_SIZE}>GOD</GodStyledText>
     </Stack>
   );

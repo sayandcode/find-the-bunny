@@ -44,6 +44,7 @@ function Board() {
     which are obtained only after the paint */
     if (holePositions.some((position) => position === undefined)) forceRender();
   });
+  useEffect(playWoosh, [bunnyPos]);
 
   /* FUNCTION DEFINITIONS */
   function startListening() {
@@ -78,6 +79,15 @@ function Board() {
     return Math.random() < 0.5 ? oldBunnyPos + 1 : oldBunnyPos - 1;
   }
 
+  function playWoosh() {
+    // prevents trying-to-play-before-user-interacts bug
+    if (bunnyPos.prev === null) return;
+
+    const jumpSound = document.getElementById('jumpSound');
+    jumpSound.currentTime = 0;
+    jumpSound.play();
+  }
+
   return (
     <>
       <Stack
@@ -105,6 +115,8 @@ function Board() {
         selectedHole={selectedHole}
         holePositions={holePositions}
       />
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      <audio preload="auto" id="jumpSound" src="music/JumpSound.wav" />
     </>
   );
 }

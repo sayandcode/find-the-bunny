@@ -36,7 +36,10 @@ function GodStyledSwitch({ size, on, onClick: handleClick }) {
 GodStyledSwitch.propTypes = {
   size: PropTypes.string.isRequired,
   on: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
+GodStyledSwitch.defaultProps = {
+  onClick: () => {},
+};
 export default GodStyledSwitch;
