@@ -1,39 +1,39 @@
-import { Pets as PawIcon } from '@mui/icons-material';
 import PropTypes from 'prop-types';
-import { Box, Stack } from '@mui/material';
-import { useContext } from 'react';
-import { ConfigContext } from '../../utils/Contexts/gameConfig';
+import { Box } from '@mui/material';
+import { forwardRef } from 'react';
+import { ReactComponent as HoleSVG } from '../../assets/BunnyHole.svg';
 
-function Hole({ hasBunny, open, onClick: handleClick }) {
-  const { noOfHoles } = useContext(ConfigContext);
+const Hole = forwardRef(({ size, selected, onClick: handleClick }, ref) => {
   return (
     <Box
+      className={selected && 'covered'}
       sx={{
-        height: `calc(50vw / ${noOfHoles})`,
-        width: `calc(50vw / ${noOfHoles})`,
+        // hole styles
+        '.hole': {
+          height: size,
+          width: size,
+          '.lid': {
+            opacity: 0,
+          },
+          '&:hover .hole-rim': {
+            fill: (theme) => theme.palette.secondary.main,
+          },
+        },
+        '&.covered .lid': {
+          opacity: 1,
+        },
       }}
       onClick={handleClick}
+      ref={ref}
     >
-      <Stack
-        alignItems="center"
-        justifyContent="center"
-        sx={{
-          height: '100%',
-          width: '100%',
-          bgcolor: open ? 'transparent' : 'rgba(0,0,0,0.6)',
-          border: open && '2px solid red',
-          borderRadius: '4px',
-        }}
-      >
-        {hasBunny && <PawIcon />}
-      </Stack>
+      <HoleSVG className="hole" />
     </Box>
   );
-}
+});
 
 Hole.propTypes = {
-  hasBunny: PropTypes.bool.isRequired,
-  open: PropTypes.bool.isRequired,
+  size: PropTypes.string.isRequired,
+  selected: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

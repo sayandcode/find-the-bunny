@@ -20,7 +20,7 @@ function Background({ children }) {
         color="primary.main"
         textAlign="center"
         pt="10vh"
-        mb="10vh"
+        mb="30vh"
       >
         find the bunny
       </Typography>
