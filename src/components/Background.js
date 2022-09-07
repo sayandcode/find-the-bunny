@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 import '@fontsource/pacifico';
 import GameSettings from './GameSettings/GameSettings';
+import GodModeToggle from './GodModeToggle/GodModeToggle';
 
 function Background({ children }) {
   return (
@@ -25,6 +26,7 @@ function Background({ children }) {
         find the bunny
       </Typography>
       <GameSettings />
+      <GodModeToggle />
       {children}
     </Box>
   );

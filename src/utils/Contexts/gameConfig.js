@@ -5,12 +5,15 @@ const ConfigContext = createContext({ noOfHoles: null, win: null });
 
 function ConfigContextProvider({ children }) {
   const [noOfHoles, setNoOfHoles] = useState(4);
+  const [godMode, setGodMode] = useState(false);
   const contextVal = useMemo(
     () => ({
       noOfHoles,
       setNoOfHoles,
+      godMode,
+      setGodMode,
     }),
-    [noOfHoles]
+    [noOfHoles, godMode]
   );
   return (
     <ConfigContext.Provider value={contextVal}>
