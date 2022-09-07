@@ -28,18 +28,22 @@ function Board() {
   const [selectedHole, setSelectedHole] = useState(null);
 
   /* GET HOLE POSITIONS FOR BUNNY */
-  const holeRefs = Array.from(Array(noOfHoles)).map(() => useRef());
-  const holePositions = holeRefs.map((ref) => {
-    return useMeasure(ref)?.middle;
-  });
+  const holeRefs = useRef(
+    [...Array(noOfHoles)].map(() => ({ current: undefined }))
+  );
+  const holePositions = holeRefs.current.map((ref) => useMeasure(ref)?.middle);
 
   /* RUNTIME CALCS */
   const holeSize = `calc(${BOARD_SIZE} / ${noOfHoles})`;
 
   /* EFFECTS */
   useListeners(startListening, stopListening);
-  // force a rerender to calculate holePositions with ref obtained from first render
-  useEffect(forceRender, []);
+  useEffect(() => {
+    /* Every time the holeRefs changes; which could be on noOfHoles change, or game reset,
+    force an additional render, so that the bunny is called with proper holePositions,
+    which are obtained only after the paint */
+    if (holePositions.some((position) => position === undefined)) forceRender();
+  });
 
   /* FUNCTION DEFINITIONS */
   function startListening() {
@@ -51,6 +55,9 @@ function Board() {
 
   function resetBoard(event) {
     const { newNoOfHoles } = event.detail;
+    holeRefs.current = [...Array(newNoOfHoles)].map(() => ({
+      current: undefined,
+    }));
     setSelectedHole(null);
     setBunnyPos(getRandomNumberUnder(newNoOfHoles));
   }
@@ -81,7 +88,7 @@ function Board() {
           margin: 'auto',
         }}
       >
-        {holeRefs.map((ref, i) => (
+        {holeRefs.current.map((ref, i) => (
           <Hole
             size={holeSize}
             // eslint-disable-next-line react/no-array-index-key
