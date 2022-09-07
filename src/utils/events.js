@@ -1,16 +1,18 @@
 import { useEffect } from 'react';
 
+const pubsub = document.createElement('div');
+
 function subscribe(eventName, eventHandlerFn) {
-  document.addEventListener(eventName, eventHandlerFn);
+  pubsub.addEventListener(eventName, eventHandlerFn);
 }
 
 function unsubscribe(eventName, eventHandlerFn) {
-  document.removeEventListener(eventName, eventHandlerFn);
+  pubsub.removeEventListener(eventName, eventHandlerFn);
 }
 
 function publishEvent(eventName, payload) {
   const event = new CustomEvent(eventName, { detail: payload });
-  document.dispatchEvent(event);
+  pubsub.dispatchEvent(event);
 }
 
 // used to start and stop listeners
