@@ -7,7 +7,7 @@ import useListeners, {
   subscribe,
   unsubscribe,
 } from '../../utils/events';
-import Bunny from './Bunny';
+import Bunny from './Bunny/Bunny';
 import Hole from './Hole';
 
 const BOARD_SIZE = '50vw';
