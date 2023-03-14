@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/find-the-bunny/static/css/main.2d869a85.css",
-    "main.js": "/find-the-bunny/static/js/main.68e99078.js",
-    "static/media/pacifico-all-400-normal.woff": "/find-the-bunny/static/media/pacifico-all-400-normal.8f19c0296562a647f0a0.woff",
-    "static/media/pacifico-latin-400-normal.woff2": "/find-the-bunny/static/media/pacifico-latin-400-normal.f36bb0347eecd87d78af.woff2",
-    "static/media/pacifico-latin-ext-400-normal.woff2": "/find-the-bunny/static/media/pacifico-latin-ext-400-normal.e12a2413eb43b100497c.woff2",
-    "static/media/pacifico-cyrillic-ext-400-normal.woff2": "/find-the-bunny/static/media/pacifico-cyrillic-ext-400-normal.682f9fb5d72ef074686d.woff2",
-    "static/media/BunnyHole.svg": "/find-the-bunny/static/media/BunnyHole.f57e645e9f7d61ef48a1b965145527bf.svg",
-    "static/media/JumpingBunny.svg": "/find-the-bunny/static/media/JumpingBunny.0b4c2ebf7a89deeb144cc138ecb9fdd3.svg",
-    "static/media/pacifico-cyrillic-400-normal.woff2": "/find-the-bunny/static/media/pacifico-cyrillic-400-normal.12b0288f7a1df3155d42.woff2",
-    "static/media/pacifico-vietnamese-400-normal.woff2": "/find-the-bunny/static/media/pacifico-vietnamese-400-normal.bd5387ce81f7c383a0a3.woff2",
-    "index.html": "/find-the-bunny/index.html",
-    "main.2d869a85.css.map": "/find-the-bunny/static/css/main.2d869a85.css.map",
-    "main.68e99078.js.map": "/find-the-bunny/static/js/main.68e99078.js.map"
+    "main.css": "/static/css/main.e0157ca7.css",
+    "main.js": "/static/js/main.ddec86b6.js",
+    "static/media/pacifico-all-400-normal.woff": "/static/media/pacifico-all-400-normal.8f19c0296562a647f0a0.woff",
+    "static/media/pacifico-latin-400-normal.woff2": "/static/media/pacifico-latin-400-normal.f36bb0347eecd87d78af.woff2",
+    "static/media/pacifico-latin-ext-400-normal.woff2": "/static/media/pacifico-latin-ext-400-normal.e12a2413eb43b100497c.woff2",
+    "static/media/pacifico-cyrillic-ext-400-normal.woff2": "/static/media/pacifico-cyrillic-ext-400-normal.682f9fb5d72ef074686d.woff2",
+    "static/media/BunnyHole.svg": "/static/media/BunnyHole.f57e645e9f7d61ef48a1b965145527bf.svg",
+    "static/media/JumpingBunny.svg": "/static/media/JumpingBunny.0b4c2ebf7a89deeb144cc138ecb9fdd3.svg",
+    "static/media/pacifico-cyrillic-400-normal.woff2": "/static/media/pacifico-cyrillic-400-normal.12b0288f7a1df3155d42.woff2",
+    "static/media/pacifico-vietnamese-400-normal.woff2": "/static/media/pacifico-vietnamese-400-normal.bd5387ce81f7c383a0a3.woff2",
+    "index.html": "/index.html",
+    "main.e0157ca7.css.map": "/static/css/main.e0157ca7.css.map",
+    "main.ddec86b6.js.map": "/static/js/main.ddec86b6.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d869a85.css",
-    "static/js/main.68e99078.js"
+    "static/css/main.e0157ca7.css",
+    "static/js/main.ddec86b6.js"
   ]
 }
